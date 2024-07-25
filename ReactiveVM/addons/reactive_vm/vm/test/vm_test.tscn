@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://h6wj7h37frl0"]
+
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/vm_manager.gd" id="1_25twl"]
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/test/vm_test.gd" id="1_g7hjg"]
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/test/vm_bind_test.gd" id="3_7gs7k"]
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/test/vm_regist_test.gd" id="4_1yxi6"]
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/binder/vm_binder.gd" id="5_agah1"]
+
+[node name="VMTest" type="Node2D"]
+
+[node name="VM" type="Node2D" parent="."]
+script = ExtResource("1_25twl")
+
+[node name="VMTest" type="Node" parent="."]
+script = ExtResource("1_g7hjg")
+
+[node name="VMBindTest" type="Node" parent="."]
+script = ExtResource("3_7gs7k")
+
+[node name="VMRegistTest" type="Node" parent="."]
+script = ExtResource("4_1yxi6")
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("nodes")]
+script = ExtResource("5_agah1")
+nodes = []

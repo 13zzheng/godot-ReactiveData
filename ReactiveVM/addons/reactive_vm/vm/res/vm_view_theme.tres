@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c2rrno0cm60kl"]
+
+[ext_resource type="StyleBox" uid="uid://c84on08poypgb" path="res://addons/reactive_vm/vm/res/stylebox/panel.tres" id="2_i5ycb"]
+
+[resource]
+ItemList/styles/panel = ExtResource("2_i5ycb")
+Panel/styles/panel = ExtResource("2_i5ycb")
+PanelContainer/styles/panel = ExtResource("2_i5ycb")

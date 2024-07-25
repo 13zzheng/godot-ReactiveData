@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8nfmygpp3sd"]
+
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/item/input_item.gd" id="1_x6qfb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6oegi"]
+font_size = 14
+font_color = Color(0.811765, 0.811765, 0.811765, 1)
+
+[node name="InputItem" type="MarginContainer"]
+custom_minimum_size = Vector2(120, 30)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1026.0
+offset_bottom = -617.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6qfb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prop"
+label_settings = SubResource("LabelSettings_6oegi")
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+clear_button_enabled = true

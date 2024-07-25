@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://40hra3f6lvs6"]
+
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/vm_binder_view.gd" id="1_wmtmo"]
+[ext_resource type="Theme" uid="uid://c2rrno0cm60kl" path="res://addons/reactive_vm/vm/res/vm_view_theme.tres" id="2_y7rhx"]
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/item/node_drop.gd" id="3_vc2yk"]
+[ext_resource type="Script" path="res://addons/reactive_vm/common/list/list_container.gd" id="6_pgisf"]
+
+[node name="VmBinderView" type="Control" node_paths=PackedStringArray("node_list", "prop_list", "node_drop")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_y7rhx")
+script = ExtResource("1_wmtmo")
+node_list = NodePath("MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer")
+prop_list = NodePath("MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig/ListContainer")
+node_drop = NodePath("MarginContainer/HSplitContainer/NodeDrop")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 200
+
+[node name="NodeDrop" type="MarginContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("3_vc2yk")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HSplitContainer/NodeDrop"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ListContainer" type="ScrollContainer" parent="MarginContainer/HSplitContainer/NodeDrop/PanelContainer" node_paths=PackedStringArray("content")]
+layout_mode = 2
+script = ExtResource("6_pgisf")
+content = NodePath("VBoxContainer")
+enable_item_click = true
+enable_item_select = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="MarginContainerConfig" type="MarginContainer" parent="MarginContainer/HSplitContainer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig"]
+layout_mode = 2
+
+[node name="ListContainer" type="ScrollContainer" parent="MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig" node_paths=PackedStringArray("content")]
+layout_mode = 2
+script = ExtResource("6_pgisf")
+content = NodePath("Content")
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig/ListContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainerConfig2" type="MarginContainer" parent="MarginContainer/HSplitContainer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig2"]
+layout_mode = 2

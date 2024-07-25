@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pqgncm03k5ok"]
+
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/prop_bind_config_view.gd" id="1_c5e0f"]
+[ext_resource type="Theme" uid="uid://c2rrno0cm60kl" path="res://addons/reactive_vm/vm/res/vm_view_theme.tres" id="1_i3mha"]
+
+[node name="PropBindConfigView" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i3mha")
+script = ExtResource("1_c5e0f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
