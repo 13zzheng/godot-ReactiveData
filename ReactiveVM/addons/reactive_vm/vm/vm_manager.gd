@@ -1,7 +1,7 @@
 extends VMManagerBase
 class_name VMManager
 
-const SingletonName = "VM"
+const SingletonName = "ReactiveVM"
 const SingletonPath = "/root/" + SingletonName
 
 var bind: VMBind

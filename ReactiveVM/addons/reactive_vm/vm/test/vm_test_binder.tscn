@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://addons/reactive_vm/vm/binder/vm_binder.gd" id="1_dwk30"]
 [ext_resource type="Script" path="res://addons/reactive_vm/vm/binder/vm_binder_node_config.gd" id="2_7bx0q"]
 
-[sub_resource type="Resource" id="Resource_57vv5"]
+[sub_resource type="Resource" id="Resource_iy5cf"]
 script = ExtResource("2_7bx0q")
 prop_config_arr = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_prop_config.gd")]([])
 
-[sub_resource type="Resource" id="Resource_3k5xu"]
+[sub_resource type="Resource" id="Resource_43423"]
 script = ExtResource("2_7bx0q")
 prop_config_arr = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_prop_config.gd")]([])
 
-[sub_resource type="Resource" id="Resource_pe5sk"]
+[sub_resource type="Resource" id="Resource_p0ja7"]
 script = ExtResource("2_7bx0q")
 prop_config_arr = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_prop_config.gd")]([])
 
@@ -19,13 +19,13 @@ prop_config_arr = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_p
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Node2D8" type="Node2D" parent="."]
+[node name="Node2D11" type="Node2D" parent="."]
 
-[node name="Node2D9" type="Node2D" parent="."]
+[node name="Node2D14" type="Node2D" parent="."]
 
-[node name="Node2D10" type="Node2D" parent="."]
+[node name="Node2D16" type="Node2D" parent="."]
 
 [node name="VMBinder" type="Node" parent="." node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_dwk30")
-node_config_arr = Array[ExtResource("2_7bx0q")]([SubResource("Resource_57vv5"), SubResource("Resource_3k5xu"), SubResource("Resource_pe5sk")])
-nodes = [NodePath("../Node2D10"), NodePath("../Node2D9"), NodePath("../Node2D8")]
+node_config_arr = Array[ExtResource("2_7bx0q")]([SubResource("Resource_iy5cf"), SubResource("Resource_43423"), SubResource("Resource_p0ja7")])
+nodes = [NodePath("../Node2D16"), NodePath("../Node2D14"), NodePath("../Node2D11")]

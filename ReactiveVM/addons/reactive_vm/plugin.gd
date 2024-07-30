@@ -3,7 +3,7 @@ extends EditorPlugin
 
 const VMBinderView = preload("res://addons/reactive_vm/vm/editor/vm_binder_view.tscn")
 
-const SingletonName = "VM"
+const SingletonName = VMManager.SingletonName
 
 var vmbinder_view: Control
 

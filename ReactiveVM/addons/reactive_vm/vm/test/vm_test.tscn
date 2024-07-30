@@ -22,4 +22,5 @@ script = ExtResource("4_1yxi6")
 
 [node name="Node" type="Node" parent="." node_paths=PackedStringArray("nodes")]
 script = ExtResource("5_agah1")
-nodes = []
+node_config_arr = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_node_config.gd")]([])
+nodes = Array[Resource("res://addons/reactive_vm/vm/binder/vm_binder_node_config.gd")]([])

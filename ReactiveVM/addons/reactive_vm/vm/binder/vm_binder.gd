@@ -20,11 +20,22 @@ func bind(data: Dictionary) -> VMDict:
 	_do_bind()
 	return vm_data
 	
+func bind_node_prop(node: Node, prop: StringName, vm_path: String):
+	add_node_prop_bind(node, prop, vm_path)
+	
 func get_node_config(node: Node) -> VMBinderNodeConfig:
 	var idx = nodes.find(node)
 	if idx == -1:
 		return
 	return node_config_arr[idx]
+	
+func filter_valid_nodes():
+	for node in nodes:
+		prints("filter_valid_nodes 1", node)
+		if !is_instance_valid(node) or !node.is_inside_tree():
+			prints("filter_valid_nodes 2", node)
+			remove_node(node)
+	pass
 	
 
 func add_node(node: Node):
@@ -43,14 +54,12 @@ func remove_node(node: Node):
 	if idx == -1:
 		return
 	_remove_node(node)
-		
-	
 	
 func exist_node(node: Node):
 	var idx = nodes.find(node)
 	return idx != -1
 	
-func add_prop_bind(node: Node, prop: StringName, vm_path: String):
+func add_node_prop_bind(node: Node, prop: StringName, vm_path: String):
 	if !exist_node(node):
 		_add_node(node)
 	var cfg = get_node_config(node)

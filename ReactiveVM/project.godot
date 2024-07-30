@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-VM="*res://addons/reactive_vm/vm/vm_manager.gd"
+ReactiveVM="*res://addons/reactive_vm/vm/vm_manager.gd"
 
 [editor_plugins]
 

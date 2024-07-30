@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/item/node_drop.gd" id="3_vc2yk"]
 [ext_resource type="Script" path="res://addons/reactive_vm/common/list/list_container.gd" id="6_pgisf"]
 
-[node name="VmBinderView" type="Control" node_paths=PackedStringArray("node_list", "prop_list", "node_drop")]
+[node name="VmBinderView" type="Control" node_paths=PackedStringArray("node_list_view", "prop_list_view", "node_drop")]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 3
 anchors_preset = 15
@@ -15,8 +15,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_y7rhx")
 script = ExtResource("1_wmtmo")
-node_list = NodePath("MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer")
-prop_list = NodePath("MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig/ListContainer")
+node_list_view = NodePath("MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer")
+prop_list_view = NodePath("MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig/ListContainer")
 node_drop = NodePath("MarginContainer/HSplitContainer/NodeDrop")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
