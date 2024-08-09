@@ -37,8 +37,6 @@ func add_item(item: Node):
 	content.add_child(item)
 	if enable_item_click:
 		_add_list_item_touch(list_item)
-	#if item.has_signal('click'):
-		#item.click.connect(_on_item_click)
 	return list_item
 	pass
 	

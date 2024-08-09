@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://den4281p0xqig"]
+
+[ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/sub_view/vm_binder_nodes_panel.gd" id="1_egr04"]
+[ext_resource type="Script" path="res://addons/reactive_vm/common/list/list_container.gd" id="1_nf8ne"]
+
+[node name="VmBinderNodesPanel" type="Control" node_paths=PackedStringArray("node_list_view")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_egr04")
+node_list_view = NodePath("ListContainer")
+
+[node name="ListContainer" type="ScrollContainer" parent="." node_paths=PackedStringArray("content")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nf8ne")
+content = NodePath("VBoxContainer")
+enable_item_click = true
+enable_item_select = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ListContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

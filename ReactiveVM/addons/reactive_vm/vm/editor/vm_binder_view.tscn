@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://40hra3f6lvs6"]
+[gd_scene load_steps=6 format=3 uid="uid://40hra3f6lvs6"]
 
 [ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/vm_binder_view.gd" id="1_wmtmo"]
 [ext_resource type="Theme" uid="uid://c2rrno0cm60kl" path="res://addons/reactive_vm/vm/res/vm_view_theme.tres" id="2_y7rhx"]
 [ext_resource type="Script" path="res://addons/reactive_vm/vm/editor/item/node_drop.gd" id="3_vc2yk"]
+[ext_resource type="PackedScene" uid="uid://den4281p0xqig" path="res://addons/reactive_vm/vm/editor/sub_view/vm_binder_nodes_panel.tscn" id="4_420yh"]
 [ext_resource type="Script" path="res://addons/reactive_vm/common/list/list_container.gd" id="6_pgisf"]
 
-[node name="VmBinderView" type="Control" node_paths=PackedStringArray("node_list_view", "prop_list_view", "node_drop")]
+[node name="VmBinderView" type="Control" node_paths=PackedStringArray("prop_list_view", "node_drop", "nodes_panel")]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 3
 anchors_preset = 15
@@ -15,9 +16,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_y7rhx")
 script = ExtResource("1_wmtmo")
-node_list_view = NodePath("MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer")
 prop_list_view = NodePath("MarginContainer/HSplitContainer/HSplitContainer/MarginContainerConfig/ListContainer")
 node_drop = NodePath("MarginContainer/HSplitContainer/NodeDrop")
+nodes_panel = NodePath("MarginContainer/HSplitContainer/NodeDrop/PanelContainer/VmBinderNodesPanel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -41,16 +42,8 @@ custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="ListContainer" type="ScrollContainer" parent="MarginContainer/HSplitContainer/NodeDrop/PanelContainer" node_paths=PackedStringArray("content")]
+[node name="VmBinderNodesPanel" parent="MarginContainer/HSplitContainer/NodeDrop/PanelContainer" instance=ExtResource("4_420yh")]
 layout_mode = 2
-script = ExtResource("6_pgisf")
-content = NodePath("VBoxContainer")
-enable_item_click = true
-enable_item_select = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/NodeDrop/PanelContainer/ListContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HSplitContainer"]
 layout_mode = 2

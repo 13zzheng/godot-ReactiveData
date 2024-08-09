@@ -29,6 +29,8 @@ func _ready():
 
 func set_node(p_node: Node):
 	node = p_node
+	if !node.renamed.is_connected(_on_node_renamed):
+		node.renamed.connect(_on_node_renamed)
 	var cls_name = node.get_class()
 	if Engine.is_editor_hint():
 		var icon_tex = EditorInterface.get_editor_theme().get_icon(cls_name, "EditorIcons")
@@ -62,6 +64,10 @@ func _on_mouse_exit():
 	
 func _on_del_pressed():
 	delete_cb.call(self)
+	pass
+	
+func _on_node_renamed():
+	label.text = node.name
 	pass
 	
 
